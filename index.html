@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XS Bạc Liêu: Bí quyết dò kết quả cực nhanh trên điện thoại</title>
+    <title>XS Bạc Liêu: Bí quyết dò kết quả cực nhanh trên điện thoại - Blog Ethan Vance</title>
     <style>
         * {
             box-sizing: border-box;
@@ -16,7 +16,12 @@
             color: #333333;
             line-height: 1.6;
         }
+
+        /* Sticky Header Navigation */
         .header-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             background-color: #c0392b;
             color: #ffffff;
             padding: 15px 0;
@@ -36,10 +41,41 @@
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            text-decoration: none;
         }
         .logo span {
             color: #f1c40f;
         }
+        .nav-home-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        .nav-home-link:hover {
+            color: #f1c40f;
+        }
+
+        /* Header Banner */
+        .header-banner {
+            max-width: 1000px;
+            margin: 20px auto 0;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .header-banner a {
+            display: block;
+        }
+        .header-banner img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Main Post Container */
         .main-container {
             max-width: 900px;
             margin: 30px auto;
@@ -47,8 +83,10 @@
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             overflow: hidden;
-            padding: 30px 25px;
+            padding: 35px 30px;
         }
+
+        /* Meta Bar */
         .meta-header {
             background-color: #fcf8f8;
             border: 1px solid #f1d6d3;
@@ -70,119 +108,127 @@
         .meta-item strong {
             color: #2c3e50;
         }
-        /* Related Articles Section */
-        .related-section {
+
+        /* Post Navigation */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
             margin-top: 40px;
             padding-top: 25px;
-            border-top: 2px solid #eee;
+            border-top: 2px dashed #eee;
         }
-        .related-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #c0392b;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .related-title::before {
-            content: "";
-            display: inline-block;
-            width: 4px;
-            height: 18px;
-            background-color: #c0392b;
-        }
-        .related-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .related-card {
-            border: 1px solid #e1e8ed;
-            border-radius: 8px;
-            overflow: hidden;
-            background: #ffffff;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-        }
-        .related-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-        }
-        .related-card img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-        }
-        .related-card-body {
+        .nav-card {
+            flex: 1;
             padding: 15px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #333;
+            transition: border-color 0.2s, background-color 0.2s;
         }
-        .related-card-title {
+        .nav-card:hover {
+            border-color: #c0392b;
+            background-color: #fff;
+        }
+        .nav-card .nav-label {
+            font-size: 12px;
+            color: #888;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .nav-card .nav-title {
             font-size: 14px;
             font-weight: bold;
             color: #2c3e50;
-            line-height: 1.4;
-            margin-bottom: 8px;
         }
-        .related-card:hover .related-card-title {
+        .nav-card:hover .nav-title {
             color: #c0392b;
         }
-        .related-card-date {
-            font-size: 12px;
-            color: #888888;
-            margin-top: auto;
+        .nav-card.next {
+            text-align: right;
         }
+
         /* Footer Styling */
         footer {
             background-color: #1a252f;
             color: #bdc3c7;
             text-align: center;
-            padding: 25px 15px;
+            padding: 30px 15px;
             margin-top: 50px;
             font-size: 14px;
             border-top: 4px solid #c0392b;
         }
-        footer a {
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .footer-socials a {
+            color: #ffffff;
+            text-decoration: none;
+            background-color: #2c3e50;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            transition: background-color 0.2s;
+        }
+        .footer-socials a:hover {
+            background-color: #c0392b;
+        }
+        footer p a {
             color: #f1c40f;
             text-decoration: none;
             font-weight: bold;
         }
-        footer a:hover {
+        footer p a:hover {
             text-decoration: underline;
         }
+
         @media (max-width: 600px) {
             .main-container {
-                padding: 15px;
+                padding: 20px 15px;
                 margin: 15px auto;
             }
             .meta-header {
                 flex-direction: column;
                 gap: 8px;
             }
+            .post-navigation {
+                flex-direction: column;
+            }
+            .nav-card.next {
+                text-align: left;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation Bar -->
+    <!-- Sticky Header Navigation -->
     <header class="header-nav">
         <div class="header-container">
-            <div class="logo">Blog Ethan Vance <span>@Xổ Số Thiên Phú</span></div>
+            <a href="https://ethanvance.vercel.app/" class="logo">Blog Ethan Vance <span>@Xổ Số Thiên Phú</span></a>
+            <a href="https://ethanvance.vercel.app/" class="nav-home-link">Trang chủ ➔</a>
         </div>
     </header>
+
+    <!-- Header Banner -->
+    <div class="header-banner">
+        <a href="https://ethanvance.vercel.app/" title="Trang chủ Blog Ethan Vance">
+            <img src="https://sf-static.upanhlaylink.com/img/image_20260813a2781f9777c3fb599f17e2c7caac2ae0.jpg" alt="Blog Ethan Vance - Kết quả Xổ số">
+        </a>
+    </div>
 
     <!-- Main Content Container -->
     <main class="main-container">
 
-        <!-- Fixed Meta Header Block -->
+        <!-- Meta Header Block -->
         <div class="meta-header">
             <div class="meta-item">
                 <span>👤</span> <strong>Tác giả:</strong> Ethan Vance
@@ -329,10 +375,31 @@
             </div>
 
         </article>
+
+        <!-- Post Navigation -->
+        <div class="post-navigation">
+            <a href="#" class="nav-card prev">
+                <span class="nav-label">◄ Bài trước</span>
+                <span class="nav-title">Kinh nghiệm xem KQXS miền Trung thứ 4 nhanh và chính xác nhất</span>
+            </a>
+            <a href="#" class="nav-card next">
+                <span class="nav-label">Bài tiếp theo ►</span>
+                <span class="nav-title">Hướng dẫn tra cứu KQXSMB hôm nay chi tiết nhất</span>
+            </a>
+        </div>
+
     </main>
 
     <!-- Footer -->
     <footer>
+        <div class="footer-socials">
+            <a href="https://x.com/ethanvance9x" target="_blank" rel="noopener">X (Twitter)</a>
+            <a href="https://pinterest.com/ethanvance9x" target="_blank" rel="noopener">Pinterest</a>
+            <a href="https://youtube.com/@ethanvance9x" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://mastodon.social/@ethanvance9x" target="_blank" rel="noopener">Mastodon</a>
+            <a href="https://vimeo.com/ethanvance9x" target="_blank" rel="noopener">Vimeo</a>
+            <a href="https://framer.com/@ethanvance9x" target="_blank" rel="noopener">Framer</a>
+        </div>
         <p>Bản quyền © 2026 thuộc về <a href="https://xosothienphu.vn" target="_blank" rel="noopener">@xosothienphu.vn</a>. Tất cả các quyền được bảo lưu.</p>
     </footer>
 
