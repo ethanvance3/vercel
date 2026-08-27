@@ -123,10 +123,17 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
 
-        .post-thumb {
+        .post-thumb-link {
+            display: block;
             width: 220px;
             min-width: 220px;
+        }
+
+        .post-thumb {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         .post-content {
@@ -134,11 +141,21 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            width: 100%;
+        }
+
+        .post-title-link {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: color 0.2s ease;
+        }
+
+        .post-title-link:hover {
+            color: var(--primary-color);
         }
 
         .post-title {
             font-size: 1.1rem;
-            color: var(--text-color);
             margin-bottom: 8px;
             font-weight: 700;
             line-height: 1.4;
@@ -225,7 +242,7 @@
             .post-card {
                 flex-direction: column;
             }
-            .post-thumb {
+            .post-thumb-link {
                 width: 100%;
                 height: 160px;
             }
@@ -262,18 +279,23 @@
         <section>
             <h2 class="section-title">Bài viết nổi bật</h2>
             <div class="posts-list">
-              <!-- Bài viết 1 -->
+                
+              <!-- Bài viết 1 -->                
                 <article class="post-card">
-                    <img class="post-thumb" src="https://sf-static.upanhlaylink.com/img/image_202608276a3d64b565ddfc1a4bb049cc938f27c1.jpg" alt="XS Bạc Liêu: Bí quyết dò kết quả cực nhanh trên điện thoại">
+                    <a href="https://ethanvance.vercel.app/xs-bac-lieu-bi-quyet-do-ket-qua-cuc-nhanh-tren-dien-thoai.html" class="post-thumb-link">
+                        <img class="post-thumb" src="https://sf-static.upanhlaylink.com/img/image_202608276a3d64b565ddfc1a4bb049cc938f27c1.jpg" alt="XS Bạc Liêu: Bí quyết dò kết quả cực nhanh trên điện thoại">
+                    </a>
                     <div class="post-content">
                         <div>
-                            <h3 class="post-title">XS Bạc Liêu: Bí quyết dò kết quả cực nhanh trên điện thoại</h3>
+                            <a href="https://ethanvance.vercel.app/xs-bac-lieu-bi-quyet-do-ket-qua-cuc-nhanh-tren-dien-thoai.html" class="post-title-link">
+                                <h3 class="post-title">XS Bạc Liêu: Bí quyết dò kết quả cực nhanh trên điện thoại</h3>
+                            </a>
                             <p class="post-desc">Hướng dẫn cách tra cứu kết quả XS Bac Lieu siêu tốc trên điện thoại di động, cập nhật lịch mở thưởng, cơ cấu giải thưởng và thủ tục nhận thưởng chính xác nhất.</p>
                         </div>
                         <a href="https://ethanvance.vercel.app/xs-bac-lieu-bi-quyet-do-ket-qua-cuc-nhanh-tren-dien-thoai.html" class="btn-more">Xem thêm</a>
                     </div>
                 </article>
-    
+
             </div>
         </section>
 
